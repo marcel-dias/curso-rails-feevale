@@ -1,4 +1,4 @@
-require 'transacao'
+require_relative 'transacao'
 
 def efetua(transacao)
   begin
