@@ -14,8 +14,8 @@
   <tbody>
     <% @usuario_seguidores.each do |usuario_seguidor| %>
       <tr>
-        <td><%= usuario_seguidor.seguidor %></td>
-        <td><%= usuario_seguidor.seguido %></td>
+        <td><%= usuario_seguidor.seguidor.try(:nome) %></td>
+        <td><%= usuario_seguidor.seguido.try(:nome) %></td>
         <td><%= link_to 'Show', usuario_seguidor %></td>
         <td><%= link_to 'Edit', edit_usuario_seguidor_path(usuario_seguidor) %></td>
         <td><%= link_to 'Destroy', usuario_seguidor, method: :delete, data: { confirm: 'Are you sure?' } %></td>

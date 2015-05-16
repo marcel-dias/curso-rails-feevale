@@ -2,12 +2,12 @@
 
 <p>
   <strong>Seguidor:</strong>
-  <%= @usuario_seguidor.seguidor %>
+  <%= @usuario_seguidor.seguidor.nome %>
 </p>
 
 <p>
   <strong>Seguido:</strong>
-  <%= @usuario_seguidor.seguido %>
+  <%= @usuario_seguidor.seguido.nome %>
 </p>
 
 <%= link_to 'Edit', edit_usuario_seguidor_path(@usuario_seguidor) %> |
