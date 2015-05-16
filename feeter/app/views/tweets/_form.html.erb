@@ -17,7 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :usuario_id %><br>
-    <%= f.text_field :usuario_id %>
+    <%= collection_select :tweet,
+                    :usuario_id,
+                    Usuario.all,
+                    :id,
+                    :nome %>
   </div>
   <div class="actions">
     <%= f.submit %>

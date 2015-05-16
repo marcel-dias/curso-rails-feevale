@@ -15,7 +15,7 @@
     <% @tweets.each do |tweet| %>
       <tr>
         <td><%= tweet.texto %></td>
-        <td><%= tweet.usuario %></td>
+        <td><%= tweet.usuario.nome %></td>
         <td><%= link_to 'Show', tweet %></td>
         <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
         <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
