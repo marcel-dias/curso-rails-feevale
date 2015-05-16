@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  resources :noticias
   resources :usuario_seguidores
   resources :tweets
   resources :usuarios
@@ -6,7 +8,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'usuarios#index'
+  root 'noticias#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -12,4 +12,6 @@ class Usuario < ActiveRecord::Base
             :source => :tweets
 
   has_many :tweets
+
+  validates_presence_of :nome
 end
