@@ -1,0 +1,33 @@
+<%= form_for(@usuario_seguidor) do |f| %>
+  <% if @usuario_seguidor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@usuario_seguidor.errors.count, "error") %> prohibited this usuario_seguidor from being saved:</h2>
+
+      <ul>
+      <% @usuario_seguidor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :seguidor_id %><br>
+    <%= collection_select :usuario_seguidor,
+                    :seguidor_id,
+                    Usuario.all,
+                    :id,
+                    :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :seguido_id %><br>
+    <%= collection_select :usuario_seguidor,
+                    :seguido_id,
+                    Usuario.all,
+                    :id,
+                    :nome %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

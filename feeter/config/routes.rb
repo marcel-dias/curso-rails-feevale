@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :usuario_seguidores
   resources :tweets
   resources :usuarios
   # The priority is based upon order of creation: first created -> highest priority.

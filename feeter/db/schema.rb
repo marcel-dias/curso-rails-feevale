@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150516123456) do
+ActiveRecord::Schema.define(version: 20150516141549) do
+
+  create_table "tweets", force: :cascade do |t|
+    t.string   "texto"
+    t.integer  "usuario_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "tweets", ["usuario_id"], name: "index_tweets_on_usuario_id"
+
+  create_table "usuario_seguidores", force: :cascade do |t|
+    t.integer  "seguidor_id"
+    t.integer  "seguido_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "usuario_seguidores", ["seguido_id"], name: "index_usuario_seguidores_on_seguido_id"
+  add_index "usuario_seguidores", ["seguidor_id"], name: "index_usuario_seguidores_on_seguidor_id"
 
   create_table "usuarios", force: :cascade do |t|
     t.string   "nome"

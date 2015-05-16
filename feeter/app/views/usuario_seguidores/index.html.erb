@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Usuario Seguidores</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Seguidor</th>
+      <th>Seguido</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @usuario_seguidores.each do |usuario_seguidor| %>
+      <tr>
+        <td><%= usuario_seguidor.seguidor %></td>
+        <td><%= usuario_seguidor.seguido %></td>
+        <td><%= link_to 'Show', usuario_seguidor %></td>
+        <td><%= link_to 'Edit', edit_usuario_seguidor_path(usuario_seguidor) %></td>
+        <td><%= link_to 'Destroy', usuario_seguidor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Usuario seguidor', new_usuario_seguidor_path %>
