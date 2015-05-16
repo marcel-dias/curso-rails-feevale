@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feeter</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div style='float: left; width:200px'>
+  <h1>Feeder</h1>
+
+  <nav>
+    <li style='margin:5px'><%= link_to 'Usuarios Seguidores', usuario_seguidores_path %></li>
+    <li style='margin:5px'><%= link_to 'Usuarios ', usuarios_path %></li>
+    <li style='margin:5px'><%= link_to 'Tweets', tweets_path %></li>
+  </nav>
+</div>
+<div style='float:left'>
+  <%= yield %>
+</div>
+</body>
+</html>
