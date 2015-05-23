@@ -4,5 +4,6 @@ class Category < ActiveRecord::Base
   has_many :usuario_categories
   has_many :usuarios, :through => :usuario_categories
 
-  #accepts_nested_attributes :usuarioCategory
+  accepts_nested_attributes_for :usuario_categories,
+  :allow_destroy => true
 end

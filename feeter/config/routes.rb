@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :categories
+  resources :categories do
+    get "new_usuario_category", :on => :collection
+  end
   resources :noticias
   resources :usuario_seguidores
   resources :tweets

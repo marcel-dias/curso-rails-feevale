@@ -11,5 +11,7 @@ window.initCategory = ->
         ($ "#table-usuario-category tbody").append(result.html)
       else
         alert "Rapaz, tem alguma coisa estranha ai"
-  ($ ".remove-usuario-category").on "click", =>
-    ($ this).siblings(".destroy_record").val(true)
+  ($ ".remove-usuario-category").on "click", ->
+    button = ($ this)
+    button.siblings(".destroy_record").val(true)
+    button.parentsUntil("tbody").hide()
