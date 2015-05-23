@@ -1,6 +1,8 @@
 @import "bootstrap-variables.scss";
 @import "bootstrap-sprockets.scss";
 @import "bootstrap.scss";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 body {
   padding-top: $navbar-height + 10px;
