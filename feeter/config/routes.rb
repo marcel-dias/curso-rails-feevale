@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :categories
   resources :noticias
   resources :usuario_seguidores
   resources :tweets
