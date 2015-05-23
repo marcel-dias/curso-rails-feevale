@@ -1,0 +1,6 @@
+<p>
+  <h2>Tweets Timeline</h2>
+  <% @usuario.timeline.includes(:usuario).each do |tweet| %>
+    <%= render tweet %>
+  <% end %>
+</p>

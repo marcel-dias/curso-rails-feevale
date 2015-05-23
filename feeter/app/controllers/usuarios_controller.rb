@@ -1,5 +1,9 @@
 class UsuariosController < ApplicationController
-  before_action :set_usuario, only: [:show, :edit, :update, :destroy]
+  before_action :set_usuario, only: [:lista_de_tweets, :show, :edit, :update, :destroy]
+
+  def lista_de_tweets
+    expires_now
+  end
 
   # GET /usuarios
   # GET /usuarios.json

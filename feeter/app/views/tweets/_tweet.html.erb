@@ -1,0 +1,11 @@
+<div style='width:500px'>
+  <div style='width:100%'>
+    <%= link_to tweet.usuario.nome, tweet.usuario %> feetou..
+  </div>
+  <div style='width:100%; padding-left:15px '>
+    <%= tweet.texto %>
+  </div>
+  <div style='width:100%; text-align:right'>
+    at <%= l tweet.created_at, :format => :short %>
+  </div>
+</div>
