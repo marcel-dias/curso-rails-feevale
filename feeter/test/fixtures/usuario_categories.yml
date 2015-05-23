@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  usuario_id: 
+  category_id: 
+  papel: MyString
+
+two:
+  usuario_id: 
+  category_id: 
+  papel: MyString
