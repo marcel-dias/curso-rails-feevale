@@ -7,11 +7,11 @@
 </div>
 
 <div class="table-responsive">
-  <table class="table table-striped table-bordered table-hover">
+  <table class="table table-striped table-hover">
     <thead>
       <tr>
-            <th>Nome</th>
-            <th></th>
+        <th>Nome</th>
+        <th></th>
         <th></th>
         <th></th>
       </tr>
@@ -20,9 +20,9 @@
     <tbody>
       <%= content_tag_for(:tr, @categories) do |category| %>
             <td><%= category.nome %></td>
-            <td><%= link_to 'Show', category %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to icon("search"), category %></td>
+        <td ><%= link_to icon("edit"), edit_category_path(category) %></td>
+        <td><%= link_to icon("remove"), category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <% end %>
     </tbody>
   </table>

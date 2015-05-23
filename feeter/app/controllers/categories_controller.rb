@@ -1,6 +1,15 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
+  def new_usuario_category
+    uc_params = params.permit(:usuario_id, :papel)
+    usuario_category = UsuarioCategory.new(uc_params)
+    render :json => {
+      :valid => usuario_category.valid?,
+      :html => (render_to_string usuario_category)
+    }
+  end
+
   # GET /categories
   # GET /categories.json
   def index
@@ -69,6 +78,7 @@ class CategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params.require(:category).permit(:nome)
+      params.require(:category).permit(:nome,
+        :usuario_categories_attributes[:usuario_id, :papel, :_destroy])
     end
 end

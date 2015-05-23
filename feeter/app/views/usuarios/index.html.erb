@@ -14,9 +14,9 @@
     <% @usuarios.each do |usuario| %>
       <tr>
         <td><%= usuario.nome %></td>
-        <td><%= link_to 'Show', usuario %></td>
-        <td><%= link_to 'Edit', edit_usuario_path(usuario) %></td>
-        <td><%= link_to 'Destroy', usuario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to icon("search"), usuario %></td>
+        <td><%= link_to icon("edit"), edit_usuario_path(usuario) %></td>
+        <td><%= link_to icon("remove"), usuario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

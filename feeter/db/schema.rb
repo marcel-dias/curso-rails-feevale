@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150516194055) do
+ActiveRecord::Schema.define(version: 20150523170012) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "nome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "noticias", force: :cascade do |t|
     t.string   "titulo"
@@ -37,6 +43,17 @@ ActiveRecord::Schema.define(version: 20150516194055) do
   end
 
   add_index "tweets", ["usuario_id"], name: "index_tweets_on_usuario_id"
+
+  create_table "usuario_categories", force: :cascade do |t|
+    t.integer  "usuario_id"
+    t.integer  "category_id"
+    t.string   "papel"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "usuario_categories", ["category_id"], name: "index_usuario_categories_on_category_id"
+  add_index "usuario_categories", ["usuario_id"], name: "index_usuario_categories_on_usuario_id"
 
   create_table "usuario_seguidores", force: :cascade do |t|
     t.integer  "seguidor_id"

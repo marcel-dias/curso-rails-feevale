@@ -1,0 +1,18 @@
+<% index = Time.now.to_i %>
+<%= fields_for "category[usuario_categories_attributes][#{index}]",
+  usuario_category do |f|%>
+<tr>
+  <td>
+    <%=  usuario_category.usuario.try(:nome) %>
+  </td>
+  <td>
+    <%=  usuario_category.usuario.try(:nome) %>
+  </td>
+  <td>
+      <%= f.hidden_field :usuario_id %>
+      <%= f.hidden_field :papel %>
+      <%= f.hidden_field :_destroy %>
+      <%= icon("remove") %>
+  </td>
+</tr>
+<% end %>

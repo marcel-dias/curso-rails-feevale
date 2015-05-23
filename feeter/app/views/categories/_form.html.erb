@@ -19,6 +19,45 @@
     </div>
   </div>
   <div class="form-group">
+    <%= label_tag :nome, "Usuario:", class: "col-sm-2 control-label" %>
+    <div class="col-sm-4">
+      <%= collection_select :usuario_category,
+                    :usuario_id,
+                    Usuario.all,
+                    :id,
+                    :nome,
+                    {},
+                    :class => "form-control" %>
+    </div>
+    <%= label_tag :nome, "Papel:", class: "col-sm-2 control-label" %>
+    <div class="col-sm-4">
+      <%= text_field_tag "usuario_category[papel]", nil, class: "form-control" %>
+    </div>
+    <div class="pull-right">
+      <a id="add-usuario-category" href="#" type="button" class="btn btn-default btn-primary">
+        <%= icon("plus") %>
+      </a>
+    </div>
+  </div>
+
+  <table id="table-usuario-category"  class="table table-striped">
+    <thead>
+      <tr>
+        <th>
+          Usuario
+        </th>
+        <th>
+          Papel
+        </th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @categories
+    </tbody>
+  </table>
+
+  <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       <%= f.submit class: "btn btn-primary" %>
     </div>
